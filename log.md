@@ -91,3 +91,15 @@
 - Updated README release notes for `0.0.7`
 **Challenges:** Exact-class selectors are less elegant, but they are the fastest route when a live UI refuses to respond to broader semantic rules.
 **Follow-up:** Refresh Stylus and verify whether the Description button and sidebar section-toggle buttons now visually merge with their surrounding surfaces.
+
+## 2026-03-11 17:00 UTC — 0.0.8 status SVG color fix
+
+**Task:** Stop overriding the semantic SVG color inside the live Status control button.
+**Approach:** Use Rai's exact HTML snippet as the source of truth. The status icon already carries an inline `style="color: ..."`, so the correct fix is to remove the broad status-icon recolor from that button family and let the inline semantic color win.
+**Work done:**
+- Bumped the userstyle version to `0.0.8`
+- Removed `Status` from the broad generic button/SVG recolor selector
+- Added a narrow exception for `button[aria-label="Status"]` so its icon inherits its intended inline color instead of getting flattened
+- Updated README release notes for `0.0.8`
+**Challenges:** This confirmed the broader lesson from this project: generic icon rules are dangerous when the app is already encoding meaning through inline color.
+**Follow-up:** Refresh Stylus and check whether the Status control now keeps its semantic green icon instead of getting recolored.
