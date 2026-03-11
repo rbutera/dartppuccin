@@ -179,3 +179,16 @@
 - Updated README release notes for `0.0.14`
 **Challenges:** This was a compounded bug: the first attempted fix reintroduced the problem in a different form because the CSS variable used for the icon was not the semantic status color.
 **Follow-up:** Refresh Stylus and verify that the status-column icons now use their own native inline colors again.
+
+## 2026-03-11 20:07 UTC — 0.0.15 right-edge title-bar flattening
+
+**Task:** Fix the dark bars/panels to the right of task titles now that the status icons are corrected.
+**Approach:** Reuse the live DOM evidence gathered earlier for the title row. The visible dark patches seem to live in the title-row carrier wrappers around `.dart-open-rightbar`, not just the tiny control itself. So this pass flattens the title-row wrapper chain directly: the `group/title` row, the padded flex container, and the first-column AG Grid title cell wrapper.
+**Work done:**
+- Bumped the userstyle version to `0.0.15`
+- Flattened the title-row carrier wrappers around `.dart-open-rightbar`
+- Removed background/background-image/box-shadow from the relevant title-row flex wrappers
+- Kept the actual tiny right-edge control visible with subtle border/hover styling
+- Updated README release notes for `0.0.15`
+**Challenges:** The right-edge dark bars were not just the control box itself; they were being carried by one or more parent wrappers in the first title column.
+**Follow-up:** Refresh Stylus and verify whether the bars beside task titles now blend into the task row instead of appearing as separate dark strips.

@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.14
+@version 0.0.15
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -336,8 +336,13 @@
     .ag-row .ag-cell:last-child .flex,
     .ag-row .ag-cell:last-child [data-global-popper],
     .flex.max-w-full.grow.h-full.cursor-pointer.h-full[style*="--background"],
-    .flex.max-w-full.grow.h-full.cursor-pointer.h-full[style*="--highlight"] {
+    .flex.max-w-full.grow.h-full.cursor-pointer.h-full[style*="--highlight"],
+    .group\/title.flex.h-full.min-h-9.grow.items-center.gap-1\.5.truncate,
+    .flex.h-full.min-w-0.grow.items-center.gap-1[style*="padding-left"],
+    .flex.h-full.items-center.gap-1.pr-2.pl-2,
+    .ag-cell-value.ag-cell.ag-cell-not-inline-editing.ag-cell-normal-height.ag-column-first {
       background-color: transparent !important;
+      background-image: none !important;
       box-shadow: none !important;
       --background: transparent !important;
       --highlight: transparent !important;
@@ -346,6 +351,14 @@
     .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100 {
       border-color: fade(@text, 22%) !important;
       color: fade(@text, 55%) !important;
+    }
+
+    .group\/title.flex.h-full.min-h-9.grow.items-center.gap-1\.5.truncate .dart-open-rightbar,
+    .group\/title.flex.h-full.min-h-9.grow.items-center.gap-1\.5.truncate > .dart-open-rightbar,
+    .group\/title.flex.h-full.min-h-9.grow.items-center.gap-1\.5.truncate > .flex,
+    .group\/title.flex.h-full.min-h-9.grow.items-center.gap-1\.5.truncate > .flex > .dart-open-rightbar {
+      margin-left: auto !important;
+      background: transparent !important;
     }
 
     .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100:hover {
