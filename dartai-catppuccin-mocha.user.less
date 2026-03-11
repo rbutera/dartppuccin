@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.5
+@version 0.0.6
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -224,7 +224,11 @@
     .dart-leftbar .inline-block.select-none.truncate.text-sm.font-semibold.text-lt,
     .group\/leftbar .inline-block.select-none.truncate.text-sm.font-semibold.text-lt,
     .dart-leftbar .flex-1.truncate,
-    .group\/leftbar .flex-1.truncate {
+    .group\/leftbar .flex-1.truncate,
+    .dart-leftbar .flex.cursor-pointer > .flex.max-w-full.grow.relative > .flex.justify-between.w-full,
+    .group\/leftbar .flex.cursor-pointer > .flex.max-w-full.grow.relative > .flex.justify-between.w-full,
+    .dart-leftbar .flex.cursor-pointer > .flex.max-w-full.grow.relative,
+    .group\/leftbar .flex.cursor-pointer > .flex.max-w-full.grow.relative {
       color: @text !important;
       background: transparent !important;
       border-color: transparent !important;
@@ -237,6 +241,16 @@
     .group\/leftbar a,
     .group\/leftbar [role="link"],
     .group\/leftbar [role="button"] {
+      box-shadow: none !important;
+    }
+
+    .dart-leftbar .grid.grid-flow-row.auto-rows-max.gap-4,
+    .group\/leftbar .grid.grid-flow-row.auto-rows-max.gap-4,
+    .dart-leftbar .dart-large-chips.container.mt-1.w-full.px-\[13px\].text-sm.text-md,
+    .group\/leftbar .dart-large-chips.container.mt-1.w-full.px-\[13px\].text-sm.text-md {
+      background: transparent !important;
+      color: @text !important;
+      border: 0 !important;
       box-shadow: none !important;
     }
 
@@ -831,7 +845,19 @@
     .dart-large-chips.container.mt-1.w-full.px-\[13px\].text-sm.text-md,
     .grid.grid-flow-row.auto-rows-max.gap-4 {
       background-color: @base !important;
-      border-color: fade(@surface1, 55%) !important;
+      border-color: fade(@surface1, 40%) !important;
+      box-shadow: none !important;
+    }
+
+    .flex.size-full.justify-center.bg-std.border-l.border-md {
+      border-left-color: fade(@surface1, 40%) !important;
+    }
+
+    .mx-auto.flex.min-h-full.w-full.max-w-3xl.flex-col.gap-6 > *,
+    .flex.w-full.flex-col.gap-6 > *,
+    .dart-large-chips.container.mt-1.w-full.px-\[13px\].text-sm.text-md > *,
+    .grid.grid-flow-row.auto-rows-max.gap-4 > * {
+      background: transparent !important;
       box-shadow: none !important;
     }
 

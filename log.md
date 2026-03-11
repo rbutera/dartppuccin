@@ -64,3 +64,17 @@
 - Documented the versioning convention, GitHub raw auto-update setup, selector/debugging workflow, and the main pitfalls encountered
 **Challenges:** The most important part was writing down the mistakes honestly enough that Future Heimer or another maintainer can avoid repeating them.
 **Follow-up:** Commit and push these docs changes in the next userstyle update cycle so the GitHub-hosted copy stays current.
+
+## 2026-03-11 16:39 UTC — 0.0.6 live-selector tightening pass
+
+**Task:** Proceed with version 0.0.6 and continue tightening the remaining sidebar and task-detail surface misses.
+**Approach:** Used the live selectors already discovered to aim at the actual sidebar row wrappers and the real task-detail column/content wrappers, then reduced border weight and stripped accidental nested backgrounds from direct children.
+**Work done:**
+- Bumped the userstyle version to `0.0.6`
+- Tightened sidebar row selectors around the real `Tasks`/space-name wrappers
+- Forced sidebar large-chip/grid wrappers back to transparent so they stop reading as boxed panels
+- Tightened task-detail wrapper styling and reduced the border weight on the detail column
+- Added direct-child flattening for the title/properties/description/status-strip content groups
+- Updated README release notes for `0.0.6`
+**Challenges:** These are still heuristic live-class patches rather than a fully abstracted theme API. The remaining risk is that one more inner wrapper may still be carrying the visible background in the task view.
+**Follow-up:** Refresh Stylus and check whether `0.0.6` finally changes the sidebar hierarchy and the task-detail sub-surfaces in the visible route.
