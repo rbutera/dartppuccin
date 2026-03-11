@@ -166,3 +166,16 @@
 - Updated README release notes for `0.0.13`
 **Challenges:** This confirms the value of Rai's devtools screenshots: the wrong rule was visible in plain sight, and the bug was not solvable cleanly from screenshots of the UI alone.
 **Follow-up:** Refresh Stylus and verify that the status column now preserves the native mixed icon colors instead of flattening them through the AG Grid cell SVG rule.
+
+## 2026-03-11 19:40 UTC — 0.0.14 button SVG override removal
+
+**Task:** Finish fixing the status-column icon flattening using Rai's JSON dump from the console.
+**Approach:** Use the reported computed values as the source of truth. The dump showed two separate mistakes in the userstyle: (1) the broad generic `button svg` / `[role="button"] svg` override was still catching Status controls, and (2) the status-specific fix was wrongly forcing icons to `--73dfac23`, which turned out to be a white-ish variable rather than the semantic per-icon color. The correct fix is to stop overriding Status SVG color entirely and let the SVG's own inline `style="color: ..."` win.
+**Work done:**
+- Bumped the userstyle version to `0.0.14`
+- Excluded `button[aria-label="Status"]` from the broad generic button/icon override
+- Removed the mistaken status-specific color/fill/stroke override entirely
+- Kept only the subtle Status hover background rule
+- Updated README release notes for `0.0.14`
+**Challenges:** This was a compounded bug: the first attempted fix reintroduced the problem in a different form because the CSS variable used for the icon was not the semantic status color.
+**Follow-up:** Refresh Stylus and verify that the status-column icons now use their own native inline colors again.

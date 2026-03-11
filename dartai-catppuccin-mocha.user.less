@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.13
+@version 0.0.14
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -299,14 +299,14 @@
       border-color: @surface1;
     }
 
-    button svg,
+    button:not([aria-label="Status"]) svg,
     .v-btn svg,
     .ag-button svg,
-    [role="button"] svg,
-    button [class*="icon"],
+    [role="button"]:not([aria-label="Status"]) svg,
+    button:not([aria-label="Status"]) [class*="icon"],
     .v-btn [class*="icon"],
     .ag-button [class*="icon"],
-    [role="button"] [class*="icon"],
+    [role="button"]:not([aria-label="Status"]) [class*="icon"],
     [aria-label*="Open"] svg,
     [aria-label*="open"] svg {
       color: @subtext0 !important;
@@ -318,15 +318,6 @@
       background-color: transparent !important;
       border-color: transparent !important;
       box-shadow: none !important;
-    }
-
-    button[aria-label="Status"] svg,
-    button[aria-label="Status"] [class*="icon"],
-    button[aria-label="Status"] svg *,
-    button[aria-label="Status"] [style*="color:"] {
-      color: var(--73dfac23) !important;
-      fill: currentColor !important;
-      stroke: currentColor !important;
     }
 
     button[aria-label="Status"]:hover {
