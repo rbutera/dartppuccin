@@ -192,3 +192,17 @@
 - Updated README release notes for `0.0.15`
 **Challenges:** The right-edge dark bars were not just the control box itself; they were being carried by one or more parent wrappers in the first title column.
 **Follow-up:** Refresh Stylus and verify whether the bars beside task titles now blend into the task row instead of appearing as separate dark strips.
+
+## 2026-03-11 20:12 UTC — 0.0.16 font stacks
+
+**Task:** Add custom UI and monospace font stacks without interfering with SVG/icon rendering.
+**Approach:** Set a UI font stack across normal HTML/text controls and app surfaces, set a separate mono stack for code/editor/code-like text, and explicitly avoid trying to style SVG/icon glyph systems as fonts.
+**Work done:**
+- Bumped the userstyle version to `0.0.16`
+- Added UI font stack with `Geist Sans` first and `Inter` as fallback
+- Added monospace stack with `JetBrainsMono Nerd Font` first and `JetBrains Mono` plus other nice monos as fallback
+- Scoped the mono stack to code-like elements rather than the whole UI
+- Left SVG/icon rendering out of the font change path
+- Updated README release notes for `0.0.16`
+**Challenges:** Font overrides can accidentally affect icon systems if applied too broadly, so this pass keeps the stacks on text-bearing HTML elements and code surfaces only.
+**Follow-up:** Refresh Stylus and confirm that UI text uses Geist Sans/Inter and code-ish text uses JetBrainsMono Nerd Font/JetBrains Mono without disturbing icons.

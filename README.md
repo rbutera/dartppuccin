@@ -76,6 +76,7 @@ Rai asked that the final Catppuccin metadata should list **him as maintainer, no
 
 ## Tiny release notes
 
+- `0.0.16` — added explicit UI and monospace font stacks: Geist Sans / Inter for UI, JetBrainsMono Nerd Font / JetBrains Mono for code-ish text
 - `0.0.15` — flattened the title-row carrier wrappers so the right-edge bars beside task titles stop reading as separate dark surfaces
 - `0.0.14` — removed the generic button-SVG override and the mistaken status-specific white-color override from `button[aria-label="Status"]`
 - `0.0.13` — removed the over-broad `.ag-cell button svg` override from Status controls so AG Grid status icons can keep their native per-icon colors
