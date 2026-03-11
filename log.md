@@ -78,3 +78,16 @@
 - Updated README release notes for `0.0.6`
 **Challenges:** These are still heuristic live-class patches rather than a fully abstracted theme API. The remaining risk is that one more inner wrapper may still be carrying the visible background in the task view.
 **Follow-up:** Refresh Stylus and check whether `0.0.6` finally changes the sidebar hierarchy and the task-detail sub-surfaces in the visible route.
+
+## 2026-03-11 16:55 UTC — 0.0.7 exact-class patch pass
+
+**Task:** Patch the still-missed Description button and sidebar toggle-section buttons using exact class strings supplied by Rai.
+**Approach:** Stop guessing. Use the literal class patterns from Rai's copied HTML for two problem elements and align them to the adjacent surfaces instead of trying broader family selectors.
+**Work done:**
+- Bumped the userstyle version to `0.0.7`
+- Targeted the exact `Description` button class and forced it onto the same background as the rightbar/editor surface
+- Targeted the exact `dart-handle group/page-tab ... hover:bg-md` toggle-section button class and flattened it back to the sidebar surface
+- Added explicit background alignment for `data-toolbar="rightbar-toolbar"` and inactive `.dart-editor`
+- Updated README release notes for `0.0.7`
+**Challenges:** Exact-class selectors are less elegant, but they are the fastest route when a live UI refuses to respond to broader semantic rules.
+**Follow-up:** Refresh Stylus and verify whether the Description button and sidebar section-toggle buttons now visually merge with their surrounding surfaces.

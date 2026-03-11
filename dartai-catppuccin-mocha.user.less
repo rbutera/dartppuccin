@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.6
+@version 0.0.7
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -241,6 +241,14 @@
     .group\/leftbar a,
     .group\/leftbar [role="link"],
     .group\/leftbar [role="button"] {
+      box-shadow: none !important;
+    }
+
+    button.dart-handle.group\/page-tab.flex.w-full.cursor-pointer.items-center.justify-between.rounded.pl-3\.5.pr-2\.5.text-sm.font-medium.transition-colors.drag-none.text-lt.focus-ring-lt.h-7.hover\:bg-md,
+    button.dart-handle.group\/page-tab.flex.w-full.cursor-pointer.items-center.justify-between.rounded.pl-3\.5.pr-2\.5.text-sm.font-medium.transition-colors.drag-none.text-lt.focus-ring-lt.h-7.hover\:bg-md:hover,
+    button.dart-handle.group\/page-tab.flex.w-full.cursor-pointer.items-center.justify-between.rounded.pl-3\.5.pr-2\.5.text-sm.font-medium.transition-colors.drag-none.text-lt.focus-ring-lt.h-7.hover\:bg-md:focus-visible {
+      background-color: transparent !important;
+      border-color: transparent !important;
       box-shadow: none !important;
     }
 
@@ -652,6 +660,20 @@
     .relative.-mr-1\.5.-mt-1\.5.h-\[30px\].truncate.pr-1\.5.pt-1\.5,
     .-mr-1\.5.-mt-1\.5.flex.flex-1.flex-wrap.gap-1\.5.truncate.pr-1\.5.pt-1\.5 {
       background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    [data-toolbar="rightbar-toolbar"],
+    .dart-editor,
+    .dart-editor:not(:focus-within):not(.ProseMirror-focused) {
+      background-color: @base !important;
+    }
+
+    button.flex.items-center.gap-1.rounded.py-0\.5.pl-1.pr-1\.5.text-md.hover\:bg-lt,
+    button.flex.items-center.gap-1.rounded.py-0\.5.pl-1.pr-1\.5.text-md.hover\:bg-lt:hover,
+    button.flex.items-center.gap-1.rounded.py-0\.5.pl-1.pr-1\.5.text-md.hover\:bg-lt:focus-visible {
+      background-color: @base !important;
+      border-color: transparent !important;
       box-shadow: none !important;
     }
 

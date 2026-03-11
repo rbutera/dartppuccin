@@ -76,6 +76,7 @@ Rai asked that the final Catppuccin metadata should list **him as maintainer, no
 
 ## Tiny release notes
 
+- `0.0.7` — added exact-class patches for the Description button, rightbar/editor background matching, and sidebar toggle-section buttons
 - `0.0.6` — tightened live-selector patches for sidebar row hierarchy and task-detail surface wrappers
 - `0.0.5` — prepared the userstyle for GitHub raw auto-updates, pointed metadata at `rbutera/dartppuccin`
 - `0.0.4` — first live-selector patch for the sidebar row wrappers and task-detail column wrappers
