@@ -103,3 +103,16 @@
 - Updated README release notes for `0.0.8`
 **Challenges:** This confirmed the broader lesson from this project: generic icon rules are dangerous when the app is already encoding meaning through inline color.
 **Follow-up:** Refresh Stylus and check whether the Status control now keeps its semantic green icon instead of getting recolored.
+
+## 2026-03-11 17:02 UTC — 0.0.9 Lexical editor surface fix
+
+**Task:** Stop inactive Lexical editors from keeping the darker editor background and only use that darker surface while the editor is active.
+**Approach:** Use Rai's exact HTML snippet as the target. The editor is a `div[data-lexical-editor="true"][contenteditable="true"]`, so the safe rule is: transparent at rest, darker only on `:focus` / `:focus-visible`.
+**Work done:**
+- Bumped the userstyle version to `0.0.9`
+- Added an exact-class and attribute-based selector for the Lexical task editor wrapper
+- Set inactive editor background to transparent
+- Set focused editor background to `@mantle`
+- Updated README release notes for `0.0.9`
+**Challenges:** Focus detection on contenteditable elements can be fiddly, but this is the right first move because the app is exposing a stable `data-lexical-editor` attribute.
+**Follow-up:** Refresh Stylus and verify that the task editors now blend into the page at rest and only darken when actively focused.

@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.8
+@version 0.0.9
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -674,6 +674,20 @@
     .dart-editor,
     .dart-editor:not(:focus-within):not(.ProseMirror-focused) {
       background-color: @base !important;
+    }
+
+    div[data-lexical-editor="true"].rounded.text-2xl.font-semibold.relative.px-0\.5.outline-none.text-md.focus-ring-none,
+    [data-lexical-editor="true"][contenteditable="true"] {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border-color: transparent !important;
+    }
+
+    div[data-lexical-editor="true"].rounded.text-2xl.font-semibold.relative.px-0\.5.outline-none.text-md.focus-ring-none:focus,
+    div[data-lexical-editor="true"].rounded.text-2xl.font-semibold.relative.px-0\.5.outline-none.text-md.focus-ring-none:focus-visible,
+    [data-lexical-editor="true"][contenteditable="true"]:focus,
+    [data-lexical-editor="true"][contenteditable="true"]:focus-visible {
+      background-color: @mantle !important;
     }
 
     button.flex.items-center.gap-1.rounded.py-0\.5.pl-1.pr-1\.5.text-md.hover\:bg-lt,
