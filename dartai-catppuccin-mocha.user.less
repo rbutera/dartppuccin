@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.11
+@version 0.0.12
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -314,13 +314,23 @@
       stroke: currentColor !important;
     }
 
+    button[aria-label="Status"] {
+      background-color: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
     button[aria-label="Status"] svg,
     button[aria-label="Status"] [class*="icon"],
     button[aria-label="Status"] svg *,
     button[aria-label="Status"] [style*="color:"] {
-      color: inherit !important;
+      color: var(--73dfac23) !important;
       fill: currentColor !important;
       stroke: currentColor !important;
+    }
+
+    button[aria-label="Status"]:hover {
+      background-color: var(--37b80b55) !important;
     }
 
     .dart-open-rightbar,
@@ -333,9 +343,13 @@
     .ag-row .ag-cell:last-child,
     .ag-row .ag-cell:last-child > *,
     .ag-row .ag-cell:last-child .flex,
-    .ag-row .ag-cell:last-child [data-global-popper] {
+    .ag-row .ag-cell:last-child [data-global-popper],
+    .flex.max-w-full.grow.h-full.cursor-pointer.h-full[style*="--background"],
+    .flex.max-w-full.grow.h-full.cursor-pointer.h-full[style*="--highlight"] {
       background-color: transparent !important;
       box-shadow: none !important;
+      --background: transparent !important;
+      --highlight: transparent !important;
     }
 
     .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100 {

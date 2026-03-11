@@ -141,3 +141,16 @@
 - Updated README release notes for `0.0.11`
 **Challenges:** The AG Grid cell area mixes wrapper-level backgrounds with button/icon-level styling, so both layers had to be handled separately.
 **Follow-up:** Refresh Stylus and check whether the right-edge dark patches are gone and whether the status-column SVGs stop being manually recolored.
+
+## 2026-03-11 17:44 UTC — 0.0.12 live inline-variable patch
+
+**Task:** Use live DOM evidence to fix the two remaining issues: right-edge dark patches and wrongly recolored Status SVGs.
+**Approach:** Inspect the exact live DOM in the managed browser. The right-edge carrier turned out to be a wrapper with inline CSS variables `--background` and `--highlight`, and the Status button exposed its own CSS variables `--37b80b55` and `--73dfac23`. So the fix is to target those variables directly rather than fighting generic icon rules.
+**Work done:**
+- Bumped the userstyle version to `0.0.12`
+- Forced the live `--background` / `--highlight` row-control wrapper back to transparent
+- Set `button[aria-label="Status"]` SVG/icon color from its own `--73dfac23` variable
+- Restored the Status button hover wash from its own `--37b80b55` variable
+- Updated README release notes for `0.0.12`
+**Challenges:** This confirmed that some of Dart's controls are driven less by ordinary class styling and more by inline CSS variables. Those need variable-aware overrides, not family-wide selectors.
+**Follow-up:** Refresh Stylus and verify whether the right-edge patches are gone and the Status control now uses its intended variable-driven icon color again.
