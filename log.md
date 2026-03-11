@@ -154,3 +154,15 @@
 - Updated README release notes for `0.0.12`
 **Challenges:** This confirmed that some of Dart's controls are driven less by ordinary class styling and more by inline CSS variables. Those need variable-aware overrides, not family-wide selectors.
 **Follow-up:** Refresh Stylus and verify whether the right-edge patches are gone and the Status control now uses its intended variable-driven icon color again.
+
+## 2026-03-11 19:36 UTC — 0.0.13 AG Grid status SVG selector fix
+
+**Task:** Fix the remaining status-column icon flattening using Rai's devtools screenshots.
+**Approach:** Use the Styles pane evidence directly. The screenshot showed the broad `.ag-cell button svg` rule from the userstyle still applying inside AG Grid cells and forcing status icons through `currentColor`. The correct fix is to exclude `button[aria-label="Status"]` from that AG Grid SVG override.
+**Work done:**
+- Bumped the userstyle version to `0.0.13`
+- Narrowed the AG Grid SVG/icon override so it no longer applies to `button[aria-label="Status"]`
+- Left the earlier status-specific variable-aware rules in place
+- Updated README release notes for `0.0.13`
+**Challenges:** This confirms the value of Rai's devtools screenshots: the wrong rule was visible in plain sight, and the bug was not solvable cleanly from screenshots of the UI alone.
+**Follow-up:** Refresh Stylus and verify that the status column now preserves the native mixed icon colors instead of flattening them through the AG Grid cell SVG rule.

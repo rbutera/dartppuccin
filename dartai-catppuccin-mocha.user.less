@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.12
+@version 0.0.13
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -800,16 +800,11 @@
       color: @yellow !important;
     }
 
-    .ag-cell button svg,
-    .ag-cell [role="button"] svg,
-    .ag-cell button [class*="icon"],
-    .ag-cell [role="button"] [class*="icon"],
-    .ag-cell svg[style*="color:"],
-    .ag-cell [style*="color:"] svg,
-    .ag-cell [style*="color:"] svg *,
-    .ag-cell .icon-md[style*="color:"],
-    .ag-cell .icon-sm[style*="color:"] {
-      color: unset !important;
+    .ag-cell button:not([aria-label="Status"]) svg,
+    .ag-cell [role="button"]:not([aria-label="Status"]) svg,
+    .ag-cell button:not([aria-label="Status"]) [class*="icon"],
+    .ag-cell [role="button"]:not([aria-label="Status"]) [class*="icon"] {
+      color: inherit !important;
       fill: currentColor !important;
       stroke: currentColor !important;
     }
