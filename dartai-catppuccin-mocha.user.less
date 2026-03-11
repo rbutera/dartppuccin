@@ -1,0 +1,887 @@
+/* ==UserStyle==
+@name Dart Catppuccin Mocha
+@namespace github.com/catppuccin/userstyles/styles/dartai
+@homepageURL https://github.com/rbutera/dartppuccin
+@version 0.0.5
+@updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
+@supportURL https://github.com/rbutera/dartppuccin/issues
+@description Catppuccin Mocha userstyle for Dart
+@author Catppuccin
+@license MIT
+@preprocessor less
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import "https://userstyles.catppuccin.com/lib/lib.less";
+
+@-moz-document domain("app.dartai.com"), domain("dartai.com") {
+  #catppuccin(mocha);
+
+  #catppuccin(@flavor) {
+    #lib.palette();
+    #lib.defaults();
+
+    @selection: fade(@accent, 72%);
+    @hover: fade(@surface1, 58%);
+    @active: fade(@surface2, 78%);
+    @overlay-border: fade(@surface2, 90%);
+    @soft-border: fade(@surface1, 85%);
+    @soft-accent: fade(@accent, 16%);
+    @soft-accent-2: fade(@accent, 24%);
+    @soft-red: fade(@red, 20%);
+    @soft-green: fade(@green, 20%);
+    @soft-yellow: fade(@yellow, 22%);
+    @soft-blue: fade(@blue, 22%);
+    @sidebar-hover: fade(@surface0, 92%);
+    @sidebar-active: fade(@surface1, 96%);
+    @focus-ring: 0 0 0 2px fade(@accent, 40%);
+
+    :root,
+    html,
+    body,
+    #app,
+    .dark,
+    .v-application,
+    .v-application__wrap {
+      color-scheme: dark !important;
+      background: @base !important;
+      color: @text !important;
+      accent-color: @accent !important;
+      scrollbar-color: @overlay1 @mantle;
+    }
+
+    *::selection {
+      background: @selection !important;
+      color: @crust !important;
+    }
+
+    /* Semantic utility layer */
+    .bg-std,
+    .bg-background {
+      background-color: @base !important;
+      color: @text !important;
+    }
+
+    .bg-lt,
+    .bg-surface {
+      background-color: @mantle !important;
+      color: @text !important;
+    }
+
+    .bg-md,
+    .bg-surface-light,
+    .bg-surface-bright {
+      background-color: @surface0 !important;
+      color: @text !important;
+    }
+
+    .bg-hvy,
+    .bg-surface-variant {
+      background-color: @surface1 !important;
+      color: @text !important;
+    }
+
+    .bg-md\/50 { background-color: fade(@surface0, 50%) !important; }
+    .bg-md\/80 { background-color: fade(@surface0, 80%) !important; }
+    .bg-hvy\/80 { background-color: fade(@surface1, 80%) !important; }
+
+    .text-lt,
+    .text-secondary,
+    .text-medium-emphasis {
+      color: @subtext0 !important;
+    }
+
+    .text-md,
+    .text-primary,
+    .text-high-emphasis {
+      color: @text !important;
+    }
+
+    .text-hvy {
+      color: lighten(@text, 4%) !important;
+    }
+
+    .border-lt { border-color: @surface0 !important; }
+    .border-md { border-color: @surface1 !important; }
+    .border-hvy { border-color: @surface2 !important; }
+    .border-oncolor { border-color: fade(@text, 18%) !important; }
+
+    .on\:bg-lt:hover {
+      background-color: @sidebar-hover !important;
+    }
+
+    .on\:bg-lt[data-on="true"] {
+      background-color: @sidebar-active !important;
+    }
+
+    .on\:bg-md:hover {
+      background-color: @sidebar-hover !important;
+    }
+
+    .on\:bg-md[data-on="true"] {
+      background-color: @sidebar-active !important;
+    }
+
+    .on\:bg-hvy:hover {
+      background-color: @surface1 !important;
+    }
+
+    .on\:bg-hvy[data-on="true"] {
+      background-color: @surface2 !important;
+    }
+
+    .focus-ring-std:focus-visible,
+    .focus-ring-lt:focus-visible,
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    [contenteditable="true"]:focus-visible,
+    [role="button"]:focus-visible,
+    .ag-cell-focus,
+    .ag-menu-option:focus-visible,
+    .ag-tab:focus-visible,
+    .ag-picker-field-wrapper:focus-within {
+      outline: none !important;
+      box-shadow: @focus-ring !important;
+      border-color: @accent !important;
+    }
+
+    a,
+    .text-primary,
+    .v-btn--variant-text .v-btn__content {
+      color: @accent;
+    }
+
+    /* Generic shell */
+    [class*="splitpanes"],
+    [class*="splitpanes__pane"],
+    [class*="splitpanes__splitter"] {
+      background-color: @base !important;
+      border-color: fade(@surface1, 45%) !important;
+    }
+
+    [class*="splitpanes__splitter"] {
+      width: 1px !important;
+      min-width: 1px !important;
+      background-color: fade(@surface1, 42%) !important;
+      box-shadow: none !important;
+    }
+
+    [class*="splitpanes__splitter"]::before,
+    [class*="splitpanes__splitter"]::after {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    nav,
+    aside,
+    header,
+    [role="navigation"],
+    [aria-label="Left navigation"] {
+      background-color: @mantle !important;
+      color: @text !important;
+      border-color: @surface1 !important;
+    }
+
+    .dart-leftbar,
+    .group\/leftbar,
+    .group\/leftbar > *,
+    [aria-label="Left navigation"] > *,
+    [aria-label="Left navigation"] > * > *,
+    [aria-label="Left navigation"] [class*="bg-"] {
+      background-color: @mantle !important;
+      border-color: @surface1 !important;
+    }
+
+    .dart-leftbar [class*="rounded"],
+    .dart-leftbar [class*="on\\:bg"],
+    .group\/leftbar [class*="rounded"],
+    .group\/leftbar [class*="on\\:bg"] {
+      background-image: none !important;
+    }
+
+    .dart-leftbar [class*="text-xs"],
+    .group\/leftbar [class*="text-xs"],
+    .dart-leftbar [class*="uppercase"],
+    .group\/leftbar [class*="uppercase"],
+    .dart-leftbar [class*="tracking"],
+    .group\/leftbar [class*="tracking"],
+    .dart-leftbar [class*="description"],
+    .group\/leftbar [class*="description"],
+    .dart-leftbar .flex.items-center.gap-1.text-lt.text-xs,
+    .group\/leftbar .flex.items-center.gap-1.text-lt.text-xs {
+      color: @overlay1 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .dart-leftbar .flex.w-full.select-none.items-center.gap-1.truncate.rounded.text-md.py-0\.5,
+    .group\/leftbar .flex.w-full.select-none.items-center.gap-1.truncate.rounded.text-md.py-0\.5,
+    .dart-leftbar .flex.w-full.select-none.items-center.gap-1.truncate.rounded.text-md,
+    .group\/leftbar .flex.w-full.select-none.items-center.gap-1.truncate.rounded.text-md,
+    .dart-leftbar .inline-block.select-none.truncate.text-sm.font-semibold.text-lt,
+    .group\/leftbar .inline-block.select-none.truncate.text-sm.font-semibold.text-lt,
+    .dart-leftbar .flex-1.truncate,
+    .group\/leftbar .flex-1.truncate {
+      color: @text !important;
+      background: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .dart-leftbar a,
+    .dart-leftbar [role="link"],
+    .dart-leftbar [role="button"],
+    .group\/leftbar a,
+    .group\/leftbar [role="link"],
+    .group\/leftbar [role="button"] {
+      box-shadow: none !important;
+    }
+
+    /* Inputs, search, fields */
+    input,
+    textarea,
+    select,
+    [contenteditable="true"],
+    .v-field,
+    .v-field__field,
+    .v-input__control,
+    .ag-input-field-input,
+    .ag-text-field-input,
+    .ag-picker-field-wrapper,
+    .ag-rich-select,
+    .ag-select,
+    .ag-text-area,
+    .ag-large-text-input {
+      background-color: @mantle !important;
+      color: @text !important;
+      border-color: @surface1 !important;
+      caret-color: @accent !important;
+    }
+
+    input::placeholder,
+    textarea::placeholder,
+    [contenteditable="true"][data-placeholder]::before {
+      color: @overlay1 !important;
+    }
+
+    /* Buttons and pills */
+    button,
+    .v-btn,
+    .ag-button,
+    [role="button"] {
+      background-color: @surface0;
+      color: @text;
+      border-color: @surface1;
+    }
+
+    button svg,
+    .v-btn svg,
+    .ag-button svg,
+    [role="button"] svg,
+    button [class*="icon"],
+    .v-btn [class*="icon"],
+    .ag-button [class*="icon"],
+    [role="button"] [class*="icon"],
+    [aria-label*="Open"] svg,
+    [aria-label*="open"] svg,
+    [aria-label*="status"] svg,
+    [aria-label*="Status"] svg {
+      color: @subtext0 !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+    }
+
+    button:hover,
+    .v-btn:hover,
+    .ag-button:hover,
+    [role="button"]:hover {
+      background-color: @surface1 !important;
+      border-color: @surface2 !important;
+    }
+
+    button[aria-pressed="true"],
+    [aria-selected="true"],
+    [data-selected="true"],
+    [data-state="open"],
+    .ag-row-selected,
+    .ag-selected-row,
+    .ag-tab-selected,
+    .ag-picker-field-wrapper.ag-picker-has-focus {
+      background-color: @soft-accent !important;
+      border-color: fade(@accent, 55%) !important;
+      color: @text !important;
+    }
+
+    [class*="tag"],
+    [class*="chip"],
+    [class*="pill"],
+    .ag-pill,
+    .ag-chip {
+      background-color: fade(@surface0, 68%) !important;
+      color: @subtext0 !important;
+      border-color: fade(@surface1, 70%) !important;
+    }
+
+    .dart-leftbar [class*="tag"],
+    .dart-leftbar [class*="chip"],
+    .dart-leftbar [class*="pill"],
+    .group\/leftbar [class*="tag"],
+    .group\/leftbar [class*="chip"],
+    .group\/leftbar [class*="pill"] {
+      background: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    /* Vuetify theme remap */
+    :root,
+    .v-theme--dark,
+    .dark {
+      --v-theme-background: #lib.rgbify(@base)[];
+      --v-theme-surface: #lib.rgbify(@mantle)[];
+      --v-theme-surface-bright: #lib.rgbify(@surface1)[];
+      --v-theme-surface-light: #lib.rgbify(@surface0)[];
+      --v-theme-surface-variant: #lib.rgbify(@surface2)[];
+      --v-theme-on-background: #lib.rgbify(@text)[];
+      --v-theme-on-surface: #lib.rgbify(@text)[];
+      --v-theme-on-surface-bright: #lib.rgbify(@text)[];
+      --v-theme-on-surface-light: #lib.rgbify(@text)[];
+      --v-theme-on-surface-variant: #lib.rgbify(@text)[];
+      --v-theme-primary: #lib.rgbify(@accent)[];
+      --v-theme-primary-darken-1: #lib.rgbify(darken(@accent, 8%))[];
+      --v-theme-secondary: #lib.rgbify(@sapphire)[];
+      --v-theme-secondary-darken-1: #lib.rgbify(darken(@sapphire, 8%))[];
+      --v-theme-error: #lib.rgbify(@red)[];
+      --v-theme-info: #lib.rgbify(@sky)[];
+      --v-theme-success: #lib.rgbify(@green)[];
+      --v-theme-warning: #lib.rgbify(@yellow)[];
+      --v-theme-on-primary: #lib.rgbify(@base)[];
+      --v-theme-on-secondary: #lib.rgbify(@base)[];
+      --v-theme-on-error: #lib.rgbify(@text)[];
+      --v-theme-on-info: #lib.rgbify(@base)[];
+      --v-theme-on-success: #lib.rgbify(@base)[];
+      --v-theme-on-warning: #lib.rgbify(@base)[];
+      --v-border-color: #lib.rgbify(@surface2)[];
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.78;
+      --v-disabled-opacity: 0.46;
+      --v-hover-opacity: 0.06;
+      --v-focus-opacity: 0.18;
+      --v-selected-opacity: 0.14;
+      --v-pressed-opacity: 0.16;
+      --v-theme-code: #lib.rgbify(@mantle)[];
+      --v-theme-on-code: #lib.rgbify(@text)[];
+    }
+
+    /* AG Grid */
+    .ag-root-wrapper,
+    .ag-root,
+    .ag-layout-normal,
+    .ag-layout-auto-height,
+    .ag-popup,
+    .ag-menu,
+    .ag-dialog,
+    .ag-picker-field-wrapper,
+    .ag-rich-select-list,
+    .ag-virtual-list-viewport,
+    .ag-tooltip,
+    .ag-panel,
+    .ag-side-bar,
+    .ag-status-bar {
+      --ag-background-color: @base;
+      --ag-foreground-color: @text;
+      --ag-data-color: @text;
+      --ag-secondary-foreground-color: @subtext0;
+      --ag-header-background-color: @mantle;
+      --ag-header-foreground-color: @text;
+      --ag-odd-row-background-color: fade(@mantle, 45%);
+      --ag-control-panel-background-color: @mantle;
+      --ag-subheader-background-color: @mantle;
+      --ag-subheader-toolbar-background-color: @mantle;
+      --ag-border-color: @surface1;
+      --ag-secondary-border-color: @surface0;
+      --ag-row-border-color: fade(@surface1, 60%);
+      --ag-header-column-separator-color: @surface2;
+      --ag-input-border-color: @surface1;
+      --ag-input-focus-border-color: @accent;
+      --ag-checkbox-unchecked-color: @overlay1;
+      --ag-checkbox-checked-color: @green;
+      --ag-checkbox-indeterminate-color: @yellow;
+      --ag-chip-background-color: fade(@surface0, 68%);
+      --ag-chip-border-color: fade(@surface1, 72%);
+      --ag-column-hover-color: fade(@surface0, 28%);
+      --ag-row-hover-color: fade(@surface0, 28%);
+      --ag-selected-row-background-color: fade(@accent, 14%);
+      --ag-range-selection-background-color: @soft-accent;
+      --ag-range-selection-background-color-2: @soft-accent-2;
+      --ag-range-selection-border-color: @accent;
+      --ag-input-disabled-background-color: fade(@mantle, 70%);
+      --ag-disabled-foreground-color: @overlay1;
+      --ag-modal-overlay-background-color: fade(@crust, 28%);
+      --ag-menu-background-color: @mantle;
+      --ag-tooltip-background-color: @mantle;
+      --ag-card-radius: 10px;
+      --ag-border-radius: 10px;
+      background-color: @base !important;
+      color: @text !important;
+      border-color: @surface1 !important;
+    }
+
+    .ag-header,
+    .ag-header-row,
+    .ag-pinned-left-header,
+    .ag-pinned-right-header,
+    .ag-floating-top,
+    .ag-floating-bottom {
+      background-color: @mantle !important;
+      color: @text !important;
+      border-color: @surface1 !important;
+    }
+
+    .ag-row,
+    .ag-cell,
+    .ag-full-width-row,
+    .ag-center-cols-container,
+    .ag-center-cols-viewport {
+      background-color: transparent !important;
+      color: @text !important;
+      border-color: fade(@surface1, 55%) !important;
+    }
+
+    .ag-cell:empty,
+    .ag-cell-wrapper:empty,
+    .ag-row .ag-cell:last-child,
+    .ag-pinned-right-cols-container .ag-cell,
+    .ag-center-cols-container .ag-cell:has(.ag-icon:only-child),
+    .ag-center-cols-container .ag-cell:has(button:only-child) {
+      background-color: transparent !important;
+    }
+
+    .ag-row-hover,
+    .ag-row-hover .ag-cell,
+    .ag-rich-select-row:hover,
+    .ag-autocomplete-virtual-list-item:hover,
+    .ag-virtual-list-item:hover {
+      background-color: @hover !important;
+    }
+
+    .ag-row-selected,
+    .ag-row-selected .ag-cell,
+    .ag-cell-range-selected,
+    .ag-cell-focus:not(.ag-cell-range-selected) {
+      background-color: fade(@accent, 14%) !important;
+    }
+
+    .ag-column-hover {
+      background-color: fade(@surface0, 22%) !important;
+    }
+
+    .ag-row-selected button,
+    .ag-row-selected [role="button"],
+    .ag-row-selected .ag-button,
+    .ag-row-selected [class*="tag"],
+    .ag-row-selected [class*="chip"],
+    .ag-row-selected [class*="pill"],
+    .ag-row-selected .ag-pill,
+    .ag-row-selected .ag-chip,
+    [aria-selected="true"] button,
+    [aria-selected="true"] [role="button"],
+    [aria-selected="true"] [class*="tag"],
+    [aria-selected="true"] [class*="chip"],
+    [aria-selected="true"] [class*="pill"] {
+      background-color: fade(@surface1, 92%) !important;
+      border-color: @surface2 !important;
+      color: @text !important;
+      box-shadow: none !important;
+    }
+
+    .ag-row-selected button:hover,
+    .ag-row-selected [role="button"]:hover,
+    [aria-selected="true"] button:hover,
+    [aria-selected="true"] [role="button"]:hover {
+      background-color: fade(@accent, 18%) !important;
+      border-color: fade(@accent, 50%) !important;
+    }
+
+    .ag-menu,
+    .ag-popup,
+    .ag-dialog,
+    .ag-panel-title-bar,
+    .ag-set-filter-list,
+    .ag-filter-toolpanel-instance-header,
+    .ag-advanced-filter-builder {
+      background-color: @mantle !important;
+      color: @text !important;
+      border-color: @surface1 !important;
+      box-shadow: 0 12px 36px fade(@crust, 35%) !important;
+    }
+
+    .ag-menu-option:hover,
+    .ag-tab:hover,
+    .ag-picker-field-wrapper:hover {
+      background-color: @surface0 !important;
+    }
+
+    /* Task detail / right side panel guesses and broad panel coverage */
+    [class*="rightbar"],
+    [class*="detail"],
+    [class*="drawer"],
+    [class*="panel"],
+    [class*="sidebar"],
+    [class*="popover"],
+    [role="dialog"] {
+      border-color: @surface1;
+    }
+
+    [class*="rightbar"],
+    [class*="detail"],
+    [class*="drawer"],
+    [role="dialog"] {
+      background-color: @mantle !important;
+      color: @text !important;
+    }
+
+    [class*="rightbar"] .border-md,
+    [class*="detail"] .border-md,
+    [class*="drawer"] .border-md,
+    [class*="rightbar"] .border-hvy,
+    [class*="detail"] .border-hvy,
+    [class*="drawer"] .border-hvy,
+    [class*="rightbar"] hr,
+    [class*="detail"] hr,
+    [class*="drawer"] hr,
+    [class*="rightbar"] [role="separator"],
+    [class*="detail"] [role="separator"],
+    [class*="drawer"] [role="separator"] {
+      border-color: fade(@surface1, 55%) !important;
+      background-color: fade(@surface1, 55%) !important;
+    }
+
+    [class*="rightbar"] button,
+    [class*="detail"] button,
+    [class*="drawer"] button,
+    [class*="rightbar"] [role="button"],
+    [class*="detail"] [role="button"],
+    [class*="drawer"] [role="button"] {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    [class*="rightbar"] button:hover,
+    [class*="detail"] button:hover,
+    [class*="drawer"] button:hover,
+    [class*="rightbar"] [role="button"]:hover,
+    [class*="detail"] [role="button"]:hover,
+    [class*="drawer"] [role="button"]:hover {
+      background-color: fade(@surface1, 92%) !important;
+      border-color: fade(@surface2, 82%) !important;
+    }
+
+    [class*="rightbar"] [data-state="open"],
+    [class*="detail"] [data-state="open"],
+    [class*="drawer"] [data-state="open"],
+    [class*="rightbar"] [aria-selected="true"],
+    [class*="detail"] [aria-selected="true"],
+    [class*="drawer"] [aria-selected="true"] {
+      background-color: fade(@surface2, 94%) !important;
+      border-color: fade(@surface2, 90%) !important;
+    }
+
+    [class*="rightbar"] [class*="bg-std"],
+    [class*="detail"] [class*="bg-std"],
+    [class*="drawer"] [class*="bg-std"] {
+      background-color: @base !important;
+    }
+
+    [class*="rightbar"] [class*="bg-lt"],
+    [class*="detail"] [class*="bg-lt"],
+    [class*="drawer"] [class*="bg-lt"] {
+      background-color: @base !important;
+    }
+
+    [class*="rightbar"] [class*="bg-md"],
+    [class*="detail"] [class*="bg-md"],
+    [class*="drawer"] [class*="bg-md"],
+    [class*="rightbar"] [class*="bg-hvy"],
+    [class*="detail"] [class*="bg-hvy"],
+    [class*="drawer"] [class*="bg-hvy"] {
+      background-color: @base !important;
+    }
+
+    /* Rich text / docs-ish blocks */
+    pre,
+    code,
+    kbd,
+    samp,
+    .ProseMirror,
+    .tiptap,
+    [class*="editor"],
+    [class*="markdown"],
+    [class*="prose"] {
+      background-color: transparent !important;
+      color: @text !important;
+      border-color: fade(@surface1, 55%) !important;
+    }
+
+    [class*="comment"],
+    [class*="activity"],
+    [class*="description"],
+    [class*="properties"],
+    [class*="comment"] .bg-std,
+    [class*="activity"] .bg-std,
+    [class*="description"] .bg-std,
+    [class*="properties"] .bg-std,
+    .ml-3\.5.mr-4.flex.items-center.justify-between,
+    .relative.-mr-1\.5.-mt-1\.5.h-\[30px\].truncate.pr-1\.5.pt-1\.5,
+    .-mr-1\.5.-mt-1\.5.flex.flex-1.flex-wrap.gap-1\.5.truncate.pr-1\.5.pt-1\.5 {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    [class*="title"],
+    [class*="properties"],
+    [class*="description"],
+    [class*="assignee"],
+    [class*="dartboard"],
+    [class*="status"] {
+      box-shadow: none !important;
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+      color: @rosewater !important;
+    }
+
+    hr,
+    [role="separator"],
+    .ag-divider,
+    .v-divider {
+      border-color: fade(@surface1, 75%) !important;
+      background-color: fade(@surface1, 75%) !important;
+    }
+
+    .ag-header-cell,
+    .ag-header-group-cell,
+    .ag-cell,
+    .ag-header-icon,
+    .ag-icon,
+    .ag-selection-checkbox,
+    .ag-checkbox-input-wrapper,
+    .ag-checkbox-input,
+    .ag-checkbox-label,
+    .ag-row-drag,
+    .ag-group-expanded,
+    .ag-group-contracted,
+    .ag-tab,
+    .ag-tab-guard,
+    .ag-picker-field-icon,
+    .ag-picker-collapsed,
+    .ag-picker-expanded {
+      color: @subtext0 !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+      border-color: fade(@surface1, 75%) !important;
+    }
+
+    .ag-checkbox-input-wrapper.ag-checked,
+    .ag-checkbox-input-wrapper.ag-indeterminate,
+    .ag-selection-checkbox .ag-checkbox-input-wrapper.ag-checked,
+    .ag-selection-checkbox .ag-checkbox-input-wrapper.ag-indeterminate {
+      color: inherit !important;
+    }
+
+    .ag-checkbox-input-wrapper.ag-checked {
+      color: @green !important;
+    }
+
+    .ag-checkbox-input-wrapper.ag-indeterminate {
+      color: @yellow !important;
+    }
+
+    .ag-header-cell:hover .ag-header-icon,
+    .ag-cell:hover .ag-icon,
+    .ag-menu-option:hover .ag-icon,
+    .ag-tab-selected,
+    .ag-picker-field-wrapper:hover .ag-picker-field-icon {
+      color: @text !important;
+    }
+
+    .ag-row-selected .ag-icon,
+    .ag-row-selected .ag-header-icon,
+    .ag-row-selected .ag-checkbox-input-wrapper,
+    .ag-row-selected .ag-picker-field-icon,
+    [aria-selected="true"] .ag-icon,
+    [aria-selected="true"] .ag-picker-field-icon {
+      color: @text !important;
+      border-color: fade(@accent, 38%) !important;
+    }
+
+    /* Semantic states */
+    .text-success,
+    .success,
+    [data-status="done"],
+    [data-status="completed"] {
+      color: @green !important;
+    }
+
+    .text-warning,
+    .warning,
+    [data-status="blocked"],
+    [data-status="warning"] {
+      color: @yellow !important;
+    }
+
+    .text-danger,
+    .danger,
+    [data-status="error"],
+    [data-status="failed"] {
+      color: @red !important;
+    }
+
+    .text-info,
+    .info,
+    [data-status="in-progress"],
+    [data-status="active"],
+    [data-status="started"] {
+      color: @sky !important;
+    }
+
+    .ag-cell [aria-label*="Done" i],
+    .ag-cell [title*="Done" i],
+    .ag-cell [aria-label*="Complete" i],
+    .ag-cell [title*="Complete" i],
+    .ag-cell [data-status="done"],
+    .ag-cell [data-status="completed"] {
+      color: @green !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+    }
+
+    .ag-cell [aria-label*="Block" i],
+    .ag-cell [title*="Block" i],
+    .ag-cell [aria-label*="Warning" i],
+    .ag-cell [title*="Warning" i],
+    .ag-cell [data-status="blocked"],
+    .ag-cell [data-status="warning"] {
+      color: @yellow !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+    }
+
+    .ag-cell [aria-label*="Error" i],
+    .ag-cell [title*="Error" i],
+    .ag-cell [aria-label*="Failed" i],
+    .ag-cell [title*="Failed" i],
+    .ag-cell [data-status="error"],
+    .ag-cell [data-status="failed"] {
+      color: @red !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+    }
+
+    .ag-cell [aria-label*="Progress" i],
+    .ag-cell [title*="Progress" i],
+    .ag-cell [aria-label*="Active" i],
+    .ag-cell [title*="Active" i],
+    .ag-cell [aria-label*="Started" i],
+    .ag-cell [title*="Started" i],
+    .ag-cell [data-status="in-progress"],
+    .ag-cell [data-status="active"],
+    .ag-cell [data-status="started"] {
+      color: @sky !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+    }
+
+    .ag-cell [data-status],
+    .ag-cell [class*="status"],
+    .ag-row [data-status],
+    .ag-row [class*="status"],
+    [class*="detail"] [data-status],
+    [class*="detail"] [class*="status"],
+    [class*="drawer"] [data-status],
+    [class*="drawer"] [class*="status"] {
+      background: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .flex.h-full.flex-col.subpixel-antialiased.bg-std,
+    .flex.size-full.flex-col,
+    .splitpanes.splitpanes--vertical.flex.size-full.overflow-hidden,
+    .flex.size-full.flex-col.border-r.border-md,
+    .dart-leftbar + *,
+    .dart-leftbar ~ * {
+      background-color: @base !important;
+      border-color: @surface1 !important;
+    }
+
+    .flex.size-full.justify-center.bg-std.border-l.border-md,
+    .flex.size-full.justify-center.bg-std.border-l,
+    .flex.size-full.justify-center.bg-std,
+    .flex.h-full.flex-col.items-center,
+    .flex.w-full.flex-col.grow.overflow-y-hidden,
+    .mx-auto.flex.min-h-full.w-full.max-w-3xl.flex-col.gap-6,
+    .flex.w-full.flex-col.gap-6,
+    .dart-large-chips.container.mt-1.w-full.px-\[13px\].text-sm.text-md,
+    .grid.grid-flow-row.auto-rows-max.gap-4 {
+      background-color: @base !important;
+      border-color: fade(@surface1, 55%) !important;
+      box-shadow: none !important;
+    }
+
+    [class*="detail"] .flex,
+    [class*="detail"] .grid,
+    [class*="drawer"] .flex,
+    [class*="drawer"] .grid,
+    [class*="rightbar"] .flex,
+    [class*="rightbar"] .grid {
+      background-image: none !important;
+    }
+
+    .ag-center-cols-viewport,
+    .ag-center-cols-container,
+    .ag-body-viewport,
+    .ag-pinned-left-cols-container,
+    .ag-pinned-right-cols-container {
+      background-color: @base !important;
+    }
+
+    .flex.size-full.flex-col.border-r.border-md,
+    .splitpanes__pane,
+    .splitpanes__pane > .flex,
+    .splitpanes__pane > .flex > .flex {
+      background-image: none !important;
+    }
+
+    [data-status="done"],
+    [data-status="completed"] [class*="badge"],
+    [class*="badge-success"] {
+      background-color: @soft-green !important;
+      border-color: fade(@green, 55%) !important;
+    }
+
+    [data-status="blocked"],
+    [class*="badge-warning"] {
+      background-color: @soft-yellow !important;
+      border-color: fade(@yellow, 55%) !important;
+    }
+
+    [data-status="error"],
+    [data-status="failed"],
+    [class*="badge-danger"] {
+      background-color: @soft-red !important;
+      border-color: fade(@red, 55%) !important;
+    }
+
+    [class*="badge-info"] {
+      background-color: @soft-blue !important;
+      border-color: fade(@blue, 55%) !important;
+    }
+  }
+}

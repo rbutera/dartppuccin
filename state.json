@@ -1,0 +1,25 @@
+{
+  "project": "24-dartppuccin",
+  "status": "active",
+  "owner": "navi",
+  "updated_at": "2026-03-11T16:19Z",
+  "progress": {
+    "percent": 75,
+    "phase": "iterative-testing",
+    "current_task": "Third-pass visual polish shipped; Rai testing against vanilla Dart"
+  },
+  "blockers": [],
+  "next_actions": [
+    "Rai: refresh Stylus and test left-rail, nav items, section headers, status column, description/comments surfaces",
+    "Fourth pass based on Rai's next screenshot set",
+    "Eventually: create userstyles.yml entry with Rai as maintainer + submit to Catppuccin userstyles repo"
+  ],
+  "artifacts": [
+    "README.md",
+    "plan-mocha.md",
+    "implementation-strategy.md",
+    "dartai-catppuccin-mocha.user.less",
+    "log.md"
+  ],
+  "notes": "Created 2026-03-11 by Heimer. Mocha-only scope. 4 passes completed in the same day. Core semantics are stable; remaining work is visual polish from Rai's test feedback."
+}
