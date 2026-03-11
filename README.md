@@ -71,7 +71,16 @@ Rai asked that the final Catppuccin metadata should list **him as maintainer, no
 - `README.md` — this file
 - `plan-mocha.md` — implementation plan for the first Mocha-only pass
 - `implementation-strategy.md` — theming strategy based on Tailwind semantic utilities, Vuetify variables, and AG Grid hooks
+- `docs/strategy.md` — practical playbook for future theming/debugging iterations
 - `dartai-catppuccin-mocha.user.less` — the first end-to-end Mocha userstyle to test in Stylus
+
+## Tiny release notes
+
+- `0.0.5` — prepared the userstyle for GitHub raw auto-updates, pointed metadata at `rbutera/dartppuccin`
+- `0.0.4` — first live-selector patch for the sidebar row wrappers and task-detail column wrappers
+- `0.0.3` — flattened task-detail surfaces closer to vanilla Dart
+- `0.0.2` — switched to `0.0.X` versioning for clearer live update tracking
+- `0.0.1` — initial end-to-end Mocha userstyle pass
 
 ## Test instructions
 

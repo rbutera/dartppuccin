@@ -53,3 +53,14 @@
 - Flattened comment/activity/description surfaces closer to vanilla Dart
 **Challenges:** This pass intentionally backs off some earlier, stronger Catppuccin styling choices. The trade-off is better fidelity to Dart's UI, but there may still be one or two places where semantic status color hooks need more precise selectors.
 **Follow-up:** Rai should refresh the userstyle and compare against the vanilla screenshot, focusing on section-header contrast, left-nav item treatment, status column neutrality, and the description/comments surfaces.
+
+## 2026-03-11 16:37 UTC — Release notes and strategy docs
+
+**Task:** Add a small release-notes section to the README and write a durable strategy document so future maintainers can understand how this userstyle was built and debugged.
+**Approach:** Captured the actual workflow used so far: layered theming, live DOM inspection, AG Grid-specific handling, selector misses, and the lessons learned from over-theming versus preserving Dart's vanilla hierarchy.
+**Work done:**
+- Added a compact release-notes section to `README.md`
+- Created `docs/strategy.md` with the practical playbook for future iterations
+- Documented the versioning convention, GitHub raw auto-update setup, selector/debugging workflow, and the main pitfalls encountered
+**Challenges:** The most important part was writing down the mistakes honestly enough that Future Heimer or another maintainer can avoid repeating them.
+**Follow-up:** Commit and push these docs changes in the next userstyle update cycle so the GitHub-hosted copy stays current.
