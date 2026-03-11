@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.9
+@version 0.0.10
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -321,6 +321,25 @@
       color: inherit !important;
       fill: currentColor !important;
       stroke: currentColor !important;
+    }
+
+    .dart-open-rightbar,
+    .dart-open-rightbar > .flex,
+    .dart-open-rightbar [data-global-popper],
+    .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100 {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100 {
+      border-color: fade(@text, 22%) !important;
+      color: fade(@text, 55%) !important;
+    }
+
+    .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100:hover {
+      background-color: fade(@text, 8%) !important;
+      border-color: fade(@text, 32%) !important;
+      color: fade(@text, 72%) !important;
     }
 
     button:hover,

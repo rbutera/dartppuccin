@@ -116,3 +116,16 @@
 - Updated README release notes for `0.0.9`
 **Challenges:** Focus detection on contenteditable elements can be fiddly, but this is the right first move because the app is exposing a stable `data-lexical-editor` attribute.
 **Follow-up:** Refresh Stylus and verify that the task editors now blend into the page at rest and only darken when actively focused.
+
+## 2026-03-11 17:04 UTC — 0.0.10 right-edge row-control normalization
+
+**Task:** Fix the dark patches on the right side of task rows caused by the open-rightbar control wrapper.
+**Approach:** Use Rai's exact HTML snippet for the `dart-open-rightbar` region and flatten that wrapper back to transparent so the row surface shows through. Keep only a light border/icon treatment and a subtle hover wash on the control itself.
+**Work done:**
+- Bumped the userstyle version to `0.0.10`
+- Targeted `.dart-open-rightbar` and its exact child control wrapper classes
+- Removed the dark boxed background from the wrapper region
+- Kept a faint border/icon style and a subtle hover effect for the actual control
+- Updated README release notes for `0.0.10`
+**Challenges:** This was another case where the visible dark patch lived in the wrapper utility classes, not in the icon itself.
+**Follow-up:** Refresh Stylus and confirm that the right-edge patches on task rows now blend into the row background instead of appearing as separate dark blocks.
