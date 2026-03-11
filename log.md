@@ -129,3 +129,15 @@
 - Updated README release notes for `0.0.10`
 **Challenges:** This was another case where the visible dark patch lived in the wrapper utility classes, not in the icon itself.
 **Follow-up:** Refresh Stylus and confirm that the right-edge patches on task rows now blend into the row background instead of appearing as separate dark blocks.
+
+## 2026-03-11 17:09 UTC — 0.0.11 AG Grid wrapper + SVG override narrowing
+
+**Task:** Continue fixing the dark right-edge row patches and stop the remaining unwanted SVG recoloring in the status column.
+**Approach:** Expand the flattening rules from `.dart-open-rightbar` itself to the surrounding AG Grid cell wrappers, and narrow AG Grid cell SVG overrides so inline/app-provided icon colors are not stomped by broad button/icon rules.
+**Work done:**
+- Bumped the userstyle version to `0.0.11`
+- Extended right-edge row-control flattening to `.ag-cell`, `.ag-cell-value`, `.ag-cell-wrapper`, and last-cell wrappers that contain `.dart-open-rightbar`
+- Narrowed AG Grid cell SVG overrides so status-column icons can fall back to app-provided coloring rather than theme-imposed icon color
+- Updated README release notes for `0.0.11`
+**Challenges:** The AG Grid cell area mixes wrapper-level backgrounds with button/icon-level styling, so both layers had to be handled separately.
+**Follow-up:** Refresh Stylus and check whether the right-edge dark patches are gone and whether the status-column SVGs stop being manually recolored.

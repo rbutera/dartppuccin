@@ -2,7 +2,7 @@
 @name Dart Catppuccin Mocha
 @namespace github.com/catppuccin/userstyles/styles/dartai
 @homepageURL https://github.com/rbutera/dartppuccin
-@version 0.0.10
+@version 0.0.11
 @updateURL https://raw.githubusercontent.com/rbutera/dartppuccin/main/dartai-catppuccin-mocha.user.less
 @supportURL https://github.com/rbutera/dartppuccin/issues
 @description Catppuccin Mocha userstyle for Dart
@@ -326,7 +326,14 @@
     .dart-open-rightbar,
     .dart-open-rightbar > .flex,
     .dart-open-rightbar [data-global-popper],
-    .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100 {
+    .dart-open-rightbar .flex.h-\[22px\].min-w-\[22px\].cursor-pointer.items-center.rounded.border.border-gray-900\/60.text-gray-900\/60.hover\:bg-gray-900\/10.dark\:border-white\/50.dark\:text-white\/50.dark\:hover\:bg-white\/10.print\:hidden.opacity-0.group-hover\/title\:opacity-100,
+    .ag-cell:has(.dart-open-rightbar),
+    .ag-cell-value:has(.dart-open-rightbar),
+    .ag-cell-wrapper:has(.dart-open-rightbar),
+    .ag-row .ag-cell:last-child,
+    .ag-row .ag-cell:last-child > *,
+    .ag-row .ag-cell:last-child .flex,
+    .ag-row .ag-cell:last-child [data-global-popper] {
       background-color: transparent !important;
       box-shadow: none !important;
     }
@@ -777,6 +784,20 @@
 
     .ag-checkbox-input-wrapper.ag-indeterminate {
       color: @yellow !important;
+    }
+
+    .ag-cell button svg,
+    .ag-cell [role="button"] svg,
+    .ag-cell button [class*="icon"],
+    .ag-cell [role="button"] [class*="icon"],
+    .ag-cell svg[style*="color:"],
+    .ag-cell [style*="color:"] svg,
+    .ag-cell [style*="color:"] svg *,
+    .ag-cell .icon-md[style*="color:"],
+    .ag-cell .icon-sm[style*="color:"] {
+      color: unset !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
     }
 
     .ag-header-cell:hover .ag-header-icon,

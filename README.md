@@ -76,6 +76,7 @@ Rai asked that the final Catppuccin metadata should list **him as maintainer, no
 
 ## Tiny release notes
 
+- `0.0.11` — expanded right-edge row-control flattening to parent AG Grid cell wrappers and narrowed AG Grid cell SVG overrides
 - `0.0.10` — normalized the right-edge `dart-open-rightbar` control patches so they blend into the row instead of reading as dark blocks
 - `0.0.9` — made Lexical task-title/task editors transparent when inactive and only darker when focused
 - `0.0.8` — stopped overriding inline semantic SVG colors for the Status button/control family
